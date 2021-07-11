@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace XFFreshMvvmNavigationSample
+namespace XFFreshMvvmNavigationSample.Pages
 {
     public partial class MainPage : ContentPage
     {

@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FreshMvvm;
+using XFFreshMvvmNavigationSample.PageModels;
 
 namespace XFFreshMvvmNavigationSample
 {
@@ -10,7 +12,14 @@ namespace XFFreshMvvmNavigationSample
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            var page = FreshPageModelResolver.ResolvePageModel<MainPageModel>();
+
+            var navigationPage = new FreshNavigationContainer(page);
+
+            navigationPage.BarBackgroundColor = Color.Blue;
+            navigationPage.BarTextColor = Color.White;
+
+            MainPage = navigationPage;
         }
 
         protected override void OnStart()
